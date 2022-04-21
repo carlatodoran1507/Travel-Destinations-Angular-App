@@ -1,0 +1,29 @@
+p {
+  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.welcome-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Calibri, serif;
+  font-size: 4rem;
+  font-weight: bolder;
+  color: white;
+  margin-top: 12rem;
+}
+
+.journeys-text {
+  border: 0;
+}
+
+.find-them-text {
+  font-weight: bolder;
+  border: 0;
+}

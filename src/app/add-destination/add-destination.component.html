@@ -1,0 +1,42 @@
+<div class="card secondary-card">
+  <div class="card-body">
+    <h1 class="card-title">Add a destination</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <p class="mb-3 mt-2">Please fill-in all the following fields:</p>
+      <div class="form-group">
+        <label>Location
+        <input type="text" formControlName="location" class="form-control mb-3 mr-3" size="75"
+               placeholder="Enter location name" name="location"/>
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Country
+        <input type="text" formControlName="country" class="form-control mb-3 mr-3" size="75"
+               placeholder="Enter country name" name="country"/>
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Description
+        <input type="text" formControlName="description" class="form-control mb-3 mr-3" size="75"
+               placeholder="Enter description" name="description"/>
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Tourists target
+        <input type="text" formControlName="tourist_target" class="form-control mb-3 mr-3" size="75"
+               placeholder="Enter tourists target" name="tourist_target"/>
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Estimated cost/day
+        <input type="text" formControlName="estimated_cost" class="form-control mb-3 mr-3" size="75"
+               placeholder="Enter an estimated cost/day" name="estimated_cost"/>
+        </label>
+      </div>
+      <div class="d-flex mb-1 gap-2">
+      <a [routerLink]="['/destinations']" class="btn btn-primary mr-1" role="button">Back</a>
+      <button type="submit" [disabled]="form.pristine || form.invalid" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="card secondary-card">
+  <div class="card-body">
+    <h1 class="card-title">Edit a destination</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <div>
+        <p>Enter the number of the destination in order to proceed: </p>
+        <input type="text" formControlName="destination_id" class="form-control" size="70"
+               placeholder="Enter destination number"/>
+        <p class="mb-3 mt-2">Fill-in only the fields you want to update: </p>
+        <input type="text" formControlName="location" class="form-control mb-3 mr-3" size="70"
+               placeholder="Enter location name" name="location"/>
+        <input type="text" formControlName="country" class="form-control mb-3 mr-3" size="70"
+               placeholder="Enter country name" name="country"/>
+        <input type="text" formControlName="description" class="form-control mb-3 mr-3" size="70"
+               placeholder="Enter description" name="description"/>
+        <input type="text" formControlName="tourist_target" class="form-control mb-3 mr-3" size="70"
+               placeholder="Enter tourists target" name="tourist_target"/>
+        <input type="text" formControlName="estimated_cost" class="form-control mb-3 mr-3" size="70"
+               placeholder="Enter an estimated cost/day" name="estimated_cost"/>
+      </div>
+      <div class="d-flex mb-1 gap-2">
+      <a [routerLink]="['/destinations']" class="btn btn-primary mr-1" role="button">Back</a>
+      <button type="submit" [disabled]="form.pristine || form.invalid" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

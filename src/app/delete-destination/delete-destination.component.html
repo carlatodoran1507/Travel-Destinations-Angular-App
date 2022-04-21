@@ -1,0 +1,16 @@
+<div class="card secondary-card">
+  <div class="card-body">
+    <h1 class="card-title">Remove a destination</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <p class="mb-3 mt-2">Please enter the number of the destination you want to remove:</p>
+      <div class="form-group mb-3">
+        <input type="text" formControlName="destination_id" class="form-control" size="70"
+               placeholder="Enter destination number"/>
+      </div>
+      <div class="d-flex mb-1 gap-2">
+        <a [routerLink]="['/destinations']" class="btn btn-primary mr-1" role="button">Back</a>
+        <button type="submit" [disabled]="form.pristine || form.invalid" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<header class="text-center d-flex flex-column justify-content-center">
+  <h1 class="p-2 fw-bolder mt-3">Your dream destination awaits!</h1>
+  <div class="d-flex justify-content-center mb-1 gap-2">
+    <form (ngSubmit)="onSubmit(form.value)" [formGroup]="form"
+          class="form-inline d-flex justify-content-center mt-2 mb-3 ml-15 w-25">
+      <input class="form-control mr-3" formControlName="countryFilter"
+             placeholder="Search destinations from a specific country" size="62"
+             type="text"/>
+    </form>
+  </div>
+</header>
+
+<div class="destination-container">
+  <div
+    *ngFor="let destination of displayedDestinations"
+    [ngClass]="destination ? 'destination-card' : 'destination-wrap'"
+  >
+    <mat-card *ngIf="destination">
+      <mat-card-title>
+        {{destination.destination_id}}. {{destination.location}}, {{destination.country}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{destination.tourist_target}}
+      </mat-card-subtitle>
+      <mat-card-content>
+        {{destination.description}}
+      </mat-card-content>
+      <mat-card-footer>
+        Estimated cost/day: {{destination.estimated_cost_per_day}} euro
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mb-1 mt-3 gap-2">
+  <button (click)="getPreviousPage()" *ngIf="page > 1" class="btn btn-dark" role="button">Previous</button>
+  <button (click)="getNextPage()" *ngIf="destinationCounter == 4" class="btn btn-dark" role="button">Next</button>
+</div>
+
+<div class="d-flex justify-content-center mb-1 mt-3 gap-2">
+  <a [routerLink]="['/add']" class="btn btn-primary mr-1" role="button">Add NEW destination</a>
+  <a [routerLink]="['/edit']" class="btn btn-primary mr-1" role="button">Edit destination details</a>
+  <a [routerLink]="['/delete']" class="btn btn-primary mr-1" role="button">Remove a destination</a>
+</div>
+
+

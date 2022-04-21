@@ -1,0 +1,14 @@
+body {
+  background-image: radial-gradient(transparent, black 175%), url('welcome-background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.secondary-card {
+  margin: 3rem 25rem 1rem 25rem;
+  float: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,34 @@
+h1 {
+  color: white;
+  font-size: 2.3rem;
+}
+
+.destination-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: 25rem;
+  column-gap: 4rem;
+  margin-top: 2rem;
+}
+
+.destination-wrap {
+  width: 100%;
+}
+
+.left-row-destination-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.right-row-destination-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.destination-card {
+  max-width: 40rem;
+  flex: 1;
+}
